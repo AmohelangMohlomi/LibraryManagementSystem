@@ -40,7 +40,7 @@ public class Member {
         }else{
             System.out.println("======Borrowed Items=====");
             for(LibraryItem item: borrowedItems){
-                System.out.println(item);
+                System.out.println(item.getTitle());
             }
         }
     }
