@@ -46,4 +46,12 @@ public class Member {
         }
     }
 
+    public String getMemberId() {
+        return memberId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
 }
