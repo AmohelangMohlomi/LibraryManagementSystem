@@ -62,11 +62,21 @@ public class LibraryService {
         }
     }
 
-    public void listAvailableBooks(){
-
+    public void listAvailableBooks() {
+        for (Book book : books) {
+            if (book.isAvailable()) {
+                book.displayInfo();
+            }
+        }
     }
 
-    public void listBorrowedBooksByMember(String memberId){
-
+    public void listBorrowedBooksByMember(String memberId) {
+        for (Member member : members) {
+            if (member.getMemberId().equals(memberId)) {
+                member.displayBorrowedItems();
+                return;
+            }
+        }
+        System.out.println("Member not found");
     }
 }

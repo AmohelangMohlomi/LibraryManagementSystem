@@ -33,7 +33,7 @@ public class Member {
 
     }
 
-    public void displayBorrowedItems(String[] args) {
+    public void displayBorrowedItems() {
 
         if (borrowedItems.isEmpty()){
             System.out.println("No Items borrowed");
