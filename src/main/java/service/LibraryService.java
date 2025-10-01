@@ -1,6 +1,7 @@
 package service;
 
 import model.Book;
+import model.LibraryItem;
 import model.Member;
 
 import java.util.ArrayList;
@@ -44,7 +45,21 @@ public class LibraryService {
     }
 
     public void returnBook(String memberId, String bookId){
+        for (Member member: members){
+            if(memberId.equals(member.getMemberId())){
+                for(LibraryItem item:member.getBorrowedItems()){
+                    if(bookId.equals(item.getId())){
+                        member.returnItem(item);
+                        item.setAvailable(true);
+                        System.out.println("Book returned successfully");
+                        return;
+                    }
 
+                }
+                System.out.println("Failed to return item");
+                return;
+            }
+        }
     }
 
     public void listAvailableBooks(){

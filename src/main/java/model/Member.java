@@ -6,7 +6,6 @@ public class Member {
 
     private String memberId;
     private String name;
-
     private ArrayList<LibraryItem> borrowedItems;
 
     public Member(String memberId, String name){
@@ -54,4 +53,7 @@ public class Member {
         return name;
     }
 
+    public ArrayList<LibraryItem> getBorrowedItems() {
+        return borrowedItems;
+    }
 }
